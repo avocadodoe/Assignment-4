@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class CountFreq {
+    
+    public static void main(String[] args) {
+        
+        //ask the user to input a group of characters
+        Scanner scan = new Scanner(System.in);
+        System.out.println ("Please enter a set of characters: ");
+        String scanned = scan.nextLine();
+        //convert all to lower case for easy comparison
+        String scanLower = scanned.toLowerCase();
+        
+        char[] stringToChar = scanLower.toCharArray();
+        
+        //original array of numbers and letters
+        char[] characters = "0123456789abcdefghijklmnopqrstuvwxyz".toCharArray();
+        
+        //array to be used to keep track of the count for each character
+        int[] count = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        
+        //for loop to go through the whole alphabet/number array
+        for (int j = 0; j < characters.length; j++) {
+            
+            //inner for loop to go through the scanned string
+            for (int i = 0; i < stringToChar.length; i++) {
+                
+                //checks if any of the characters matches and counts
+                if (stringToChar[i] == (characters[j])) {
+                    count[j]++;
+                }   
+            }
+            
+            System.out.println(characters[j] + "'s frequency is " + count[j]);
+        }
+
+    }
+    
+}
